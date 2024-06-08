@@ -1,0 +1,90 @@
+------------------------------------------------------------------
+virtualenv -p python3 venv
+source venv/bin/activate
+pip install django==3.2
+pip freeze
+django-admin startproject bitamachine
+tree bitamachine/
+pip freeze > requirements.txt
+
+<< for install all package in requirements.txt file --->  pip install -r requirements.txt >>
+git init .
+git status
+in bitamachine project or main project ---> local_settings.py ---> click cancel
+local_settings.py
+	SECRET_KEY = 'django-insecure-jzj^@)h65n8ugclen^vb%tf0ix39((f2sn@(=0hobz%-p*h-xq'
+	DEBUG = True
+	
+hala bayad local_settings.py bebarim tu touch .gitignore
+.gitignore
+	.idea/
+	*.pyc
+	local_*.py
+git status
+git add .
+git status   ---->   local_settings.py ra tu git naborde :)
+git commit -am "Create project structure"   ---> in avalin commit hast.
+git log
+------------------------------------------------------------------
+(venv) ---->  pip install psycopg2 or pip install psycopg2_binary
+------------------------------------------------------------------
+sudo ---> sudo -su postgres
+postgres ----> psql
+postgres=# \l    ----> we can see all databases
+postgres=# CREATE DATABASE onlineshop;
+postgres=# create user onlineshop with password 'onlineshop';
+postgres=# grant all privileges on database onlineshop to onlineshop;
+postgres=# \c onlineshop
+onlineshop=# \dt  ----> we can see all database onlineshop'tables
+--------------------------------------------------------------------
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'market',
+        'USER': 'market',
+        'PASSWORD': 'market',
+        'HOST': '127.0.0.1',
+        'PORT': 5432,
+    }
+}
+-----------------------------------------------------------------------
+How to solve ReadTimeoutError: HTTPSConnectionPool(host='pypi.python.org', port=443) with pip?
+
+Use --default-timeout=100 parameter with the install:
+
+sudo pip install --default-timeout=100 future
+-----------------------------------------------------------------------
+gitlab:
+git config --global user.name "0_error_0"
+git config --global user.email "mohammad4862fa@gmail.com"
+git remote add origin git@gitlab.com:MJ79FA/online-shop-django.git
+git push --set-upstream origin --all
+-----------------------------------------------------------------------
+create new application in django : django-admin startapp account
+-----------------------------------------------------------------------
+if you have error -> relations does not exists --> first delete all migrations, create new database, migtre, makemigrate.
+-----------------------------------------------------------------------
+
+
+
+
+create new repository :
+	echo "# newmo" >> README.md
+	git init
+	git add README.md
+	git commit -m "first commit"
+	git branch -M main
+	git remote add origin https://github.com/Mohammadjavadfa/newmo.git
+	git push -u origin main
+
+update repository:
+	git remote add origin https://github.com/Mohammadjavadfa/newmo.git
+	Username for 'https://github.com': 0_error_0
+	password : .... new token
+	git branch -M main
+	git pull
+	git add .
+	git status
+	git commit-m "first commit"
+	git push
